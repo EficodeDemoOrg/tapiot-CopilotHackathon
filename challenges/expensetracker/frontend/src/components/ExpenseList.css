@@ -1,0 +1,84 @@
+.expense-list h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.no-expenses {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead {
+  background-color: #f8f9fa;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  font-weight: 600;
+  color: #555;
+}
+
+.amount {
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.category-badge.food {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.category-badge.transport {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.category-badge.entertainment {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.category-badge.shopping {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.category-badge.bills {
+  background-color: #e2e3e5;
+  color: #383d41;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
