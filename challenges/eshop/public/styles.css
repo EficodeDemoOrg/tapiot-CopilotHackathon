@@ -1,0 +1,102 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #333; }
+
+header {
+    background: #1a1a2e; color: white; padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 10;
+}
+header h1 { font-size: 1.5rem; }
+
+#cart-icon {
+    cursor: pointer; font-size: 1.3rem; background: #e94560; padding: 0.5rem 1rem;
+    border-radius: 20px; transition: transform 0.2s;
+}
+#cart-icon:hover { transform: scale(1.1); }
+
+#search-bar {
+    padding: 1rem 2rem; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
+}
+#search-input {
+    flex: 1; min-width: 200px; padding: 0.7rem 1rem; border: 2px solid #ddd;
+    border-radius: 8px; font-size: 1rem; outline: none;
+}
+#search-input:focus { border-color: #e94560; }
+
+#price-filter { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+#price-filter input[type="range"] { width: 120px; }
+#price-filter label { font-size: 0.9rem; white-space: nowrap; }
+
+#product-list {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem; padding: 2rem;
+}
+
+.product-card {
+    background: white; border-radius: 12px; padding: 1.5rem; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+.product-card h3 { margin-bottom: 0.5rem; }
+.product-card .price { color: #e94560; font-size: 1.2rem; font-weight: bold; }
+.product-card .manufacturer { color: #888; font-size: 0.85rem; margin-top: 0.3rem; }
+.product-card .stock { font-size: 0.8rem; color: #4caf50; margin-top: 0.3rem; }
+.product-card button {
+    margin-top: 0.8rem; padding: 0.5rem 1rem; background: #e94560; color: white;
+    border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem;
+}
+.product-card button:hover { background: #c73652; }
+
+#product-detail {
+    max-width: 700px; margin: 2rem auto; background: white; border-radius: 12px;
+    padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+#product-detail h2 { margin-bottom: 1rem; }
+#product-detail .back-btn {
+    background: none; border: none; color: #e94560; cursor: pointer;
+    font-size: 1rem; margin-bottom: 1rem; display: inline-block;
+}
+#product-detail .specs { margin-top: 1rem; }
+#product-detail .specs dt { font-weight: bold; }
+#product-detail .specs dd { margin-bottom: 0.5rem; color: #555; }
+#product-detail .detail-price { font-size: 1.5rem; color: #e94560; font-weight: bold; margin: 1rem 0; }
+#product-detail button.add-btn {
+    padding: 0.7rem 1.5rem; background: #e94560; color: white;
+    border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;
+}
+
+#cart-panel {
+    position: fixed; right: 0; top: 0; width: 380px; height: 100%; background: white;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.2); z-index: 100; padding: 2rem;
+    overflow-y: auto; transition: transform 0.3s;
+}
+#cart-panel.hidden { transform: translateX(100%); }
+#cart-panel h2 { margin-bottom: 1rem; }
+#cart-items .cart-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.8rem 0; border-bottom: 1px solid #eee;
+}
+#cart-items .cart-item-info { flex: 1; }
+#cart-items .cart-item-info .name { font-weight: bold; }
+#cart-items .cart-item-info .item-price { color: #888; font-size: 0.9rem; }
+#cart-items .cart-item .qty { display: flex; align-items: center; gap: 0.5rem; }
+#cart-items .cart-item .qty button {
+    width: 28px; height: 28px; border: 1px solid #ddd; background: white;
+    border-radius: 4px; cursor: pointer; font-size: 1rem;
+}
+#cart-items .cart-item .remove-btn {
+    background: none; border: none; color: #e94560; cursor: pointer; font-size: 1.2rem; margin-left: 0.5rem;
+}
+#cart-total { font-size: 1.3rem; font-weight: bold; margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #eee; }
+#cart-panel > button {
+    margin-top: 1rem; padding: 0.6rem 1.2rem; background: #1a1a2e; color: white;
+    border: none; border-radius: 6px; cursor: pointer;
+}
+
+#overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 50; }
+#overlay.hidden { display: none; }
+
+.hidden { display: none; }
+#cart-panel.hidden { display: block; }

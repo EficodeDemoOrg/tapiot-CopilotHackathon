@@ -1,0 +1,13 @@
+{
+  "name": "eshop-automobile-parts",
+  "version": "1.0.0",
+  "description": "Automobile parts shop cart",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node --watch server/app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
